@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>POWER OF THE LAMP</title>
+        <style>
+            body{
+                background-color: #dcc7e3;
+            }
+            .box{
+                margin-left:100px;
+                margin-top:100px;
+                background-color: rgb(232, 164, 255);
+                border:solid 5px rgb(138, 0, 156);
+                width:600px;
+                height:auto;
+            }
+        </style>
+    </head>        
+    <body>
+        <center>
+        <div class="box">
+            <h1 align="center">Lamp Power</h2>
+            <h2 align="center">Varoodhini.M</h4>
+            <h3 align="center">25014386</h4>
+        <form method="POST" action="/calculate_power">
+            {%csrf_token%}
+            <label>Intensity:</label>
+            <input type="number" name="intensity" value="{{request.POST.intensity}}">
+            <br><br>
+
+            <label>Resistance:</label>
+            <input type="number" name="resistance" value="{{request.POST.resistance}}">
+            <br><br>
+
+            <button type="submit">Calculate Power</button>
+        </form>
+        {% if Power  %}
+        <h2><p>The Power:{{Power}}</p></h2>
+        {% endif %}
+        </div>
+        </center>
+    </body>
+</html>
