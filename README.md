@@ -66,9 +66,7 @@ file.html
 
             <button type="submit">Calculate Power</button>
         </form>
-        {% if Power  %}
         <h2><p>The Power:{{Power}}</p></h2>
-        {% endif %}
         </div>
         </center>
     </body>
